@@ -19,25 +19,25 @@
 
             <!-- Hero Content -->
             <div
-                class="absolute z-10 h-full w-full flex flex-col justify-center px-6 md:px-20"
+                class="absolute z-10 h-full w-full flex flex-col justify-center px-4 sm:px-6 md:px-20"
             >
                 <div class="max-w-7xl mx-auto w-full">
                     <h1
-                        class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight"
+                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
                         style="font-family: 'Poppins', sans-serif"
                     >
-                        DESA<br class="md:hidden" />
+                        DESA<br class="sm:hidden" />
                         RAKADUA
                     </h1>
                     <p
-                        class="text-lg md:text-xl text-white mb-8 max-w-lg"
+                        class="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-lg"
                         style="font-family: 'Poppins', sans-serif"
                     >
                         Informasi Seputar UMKM Desa Rakadua
                     </p>
                     <router-link
                         to="/produk-lokal"
-                        class="inline-block w-full md:w-auto bg-white bg-opacity-50 text-[#0992d6] px-8 py-3 rounded-md font-semibold hover:bg-[#0992d6] hover:text-white transition-colors duration-300 text-center"
+                        class="inline-block w-full sm:w-auto bg-white bg-opacity-50 text-[#0992d6] px-6 sm:px-8 py-3 rounded-md font-semibold hover:bg-[#0992d6] hover:text-white transition-colors duration-300 text-center text-sm sm:text-base"
                     >
                         CEK SEKARANG
                     </router-link>
@@ -60,44 +60,43 @@
 
         <!-- Tentang Kami Section -->
         <div
-            class="py-16 bg-gray-100 invisible opacity-0 transition-all duration-1000"
+            class="py-12 sm:py-16 bg-gray-100 invisible opacity-0 transition-all duration-1000"
             ref="tentangKami"
             style="transform: translateY(20px)"
         >
             <div
-                class="container mx-auto px-4 flex flex-col md:flex-row items-center"
+                class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-6 md:gap-8"
             >
-                <div class="w-full md:w-1/2 pr-4">
+                <div class="w-full md:w-1/2 md:pr-4">
                     <h2
-                        class="text-3xl font-bold text-left mb-2"
+                        class="text-2xl sm:text-3xl font-bold text-left mb-2"
                         style="
                             font-family: 'Inter', sans-serif;
                             color: #323233;
-                            max-width: 80%;
                         "
                     >
                         Desa Rakadua, Kabupaten Bombana
                     </h2>
-                    <span class="block w-1/9 h-1 bg-[#0992d6] my-1 mb-7"></span>
+                    <span class="block w-16 h-1 bg-[#0992d6] my-1 mb-6"></span>
                     <p
-                        class="text-left max-w-3xl mx-auto mb-4"
+                        class="text-left mb-4 text-sm sm:text-base"
                         style="
                             font-family: 'Noto Sans', sans-serif;
                             color: #929394;
-                            font-size: 14px;
+                            line-height: 1.6;
                         "
                     >
-                    Desa Rakadua, berada di Kecamatan Poleang Barat, Kabupaten Bombana, adalah wilayah pesisir yang memiliki kekayaan budaya dan potensi ekonomi yang khas. Dikelilingi perairan yang menjadi jalur utama kehidupan masyarakat, Desa Rakadua memiliki sektor kelautan yang berkembang pesat, terutama di bidang perikanan tangkap dan UMKM berbasis hasil laut. Kehadiran berbagai infrastruktur, seperti dermaga nelayan, turut memperlancar mobilitas warga serta memperkuat perekonomian lokal.
+                    Desa Rakadua, berada di Kecamatan Poleang Barat, Kabupaten Bombana, adalah wilayah pesisir yang memiliki kekayaan budaya dan potensi ekonomi yang khas. Dikelilingi perairan yang menjadi jalur utama kehidupan masyarakat, Desa Rakadua memiliki sektor kelautan yang berkembang pesat, terutama di bidang perikanan tangkap dan UMKM berbasis hasil laut.
                     </p>
                     <p
-                        class="text-left max-w-3xl mx-auto"
+                        class="text-left text-sm sm:text-base"
                         style="
                             font-family: 'Noto Sans', sans-serif;
                             color: #929394;
-                            font-size: 14px;
+                            line-height: 1.6;
                         "
                     >
-                    Masyarakat Rakadua memiliki keterikatan mendalam dengan budaya bahari: pelaku UMKM, khususnya perempuan pesisir, memproduksi aneka olahan laut bernilai tambah, seperti ikan kering, terasi, dan produk kreatif lainnya. Desa ini juga memiliki transportasi tradisional berupa taksi boat, yang selain berfungsi sebagai sarana mobilitas, memiliki potensi besar sebagai bagian dari atraksi wisata bahari lokal.
+                    Masyarakat Rakadua memiliki keterikatan mendalam dengan budaya bahari: pelaku UMKM, khususnya perempuan pesisir, memproduksi aneka olahan laut bernilai tambah, seperti ikan kering, terasi, dan produk kreatif lainnya.
                     </p>
                 </div>
                 <div class="w-full md:w-1/2">
@@ -112,32 +111,32 @@
 
         <!-- Berita dan Event Section -->
         <div
-            class="py-16 bg-gray-100 invisible opacity-0 transition-all duration-1000"
+            class="py-12 sm:py-16 bg-gray-100 invisible opacity-0 transition-all duration-1000"
             ref="beritaEvent"
             style="transform: translateX(-100px)"
         >
             <div class="container mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-center mb-4"
+                    class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8"
                     style="color: #1a1a1a"
                 >
                     Berita dan Event
                 </h2>
-                <div class="flex justify-end items-center mb-12">
+                <div class="flex justify-end items-center mb-8 sm:mb-12">
                     <router-link
                         to="/informasi"
-                        class="text-[#0992d6] hover:text-[#0882c0] font-semibold flex items-center"
+                        class="text-[#0992d6] hover:text-[#0882c0] font-semibold flex items-center text-sm sm:text-base"
                     >
-                        
+                        Lihat Semua
                     </router-link>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     <!-- Event Card 1 -->
                     <div
                         class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
                     >
                         <div
-                            class="w-[400px] h-[446px] bg-gray-200 flex items-center justify-center"
+                            class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                         >
                             <img
                                 src="/images/berita/WhatsApp Image 2025-09-05 at 12.35.33.jpeg"
@@ -145,16 +144,16 @@
                                 class="object-cover w-full h-full"
                             />
                         </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-xl mb-2">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg sm:text-xl mb-2">
                                 Pawai se Kecamatan Poleang Barat
                             </h3>
-                            <p>
+                            <p class="text-sm sm:text-base text-gray-600 mb-4">
                                 Pawai Se Kecamatan Poleang Barat dalam rangka memperingati Hari Kemerdekaan Republik Indonesia ke 80 bersama...
                             </p>
                             <button
                                 @click="showComingSoonAlert"
-                                class="mt-4 bg-[#0992d6] text-white px-4 py-2 rounded hover:bg-[#0882c0] transition-colors duration-200"
+                                class="w-full sm:w-auto bg-[#0992d6] text-white px-4 py-2 rounded hover:bg-[#0882c0] transition-colors duration-200 text-sm sm:text-base"
                             >
                                 Lihat Selengkapnya
                             </button>
@@ -166,7 +165,7 @@
                         class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
                     >
                         <div
-                            class="w-[400px] h-[446px] bg-gray-200 flex items-center justify-center"
+                            class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                         >
                             <img
                                 src="/images/berita/WhatsApp Image 2025-09-05 at 12.44.50.jpeg"
@@ -174,16 +173,16 @@
                                 class="object-cover w-full h-full"
                             />
                         </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-xl mb-2">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg sm:text-xl mb-2">
                                 Gerak Jalan Desa Rakadua
                             </h3>
-                            <p>
+                            <p class="text-sm sm:text-base text-gray-600 mb-4">
                                 Defile Ibu PKK Desa Rakadua dalam kegiatan Gerak Jalan Se Kecamatan Poleang Barat...
                             </p>
                             <button
                                 @click="showComingSoonAlert"
-                                class="mt-4 bg-[#0992d6] text-white px-4 py-2 rounded hover:bg-[#0882c0] transition-colors duration-200"
+                                class="w-full sm:w-auto bg-[#0992d6] text-white px-4 py-2 rounded hover:bg-[#0882c0] transition-colors duration-200 text-sm sm:text-base"
                             >
                                 Lihat Selengkapnya
                             </button>
@@ -192,10 +191,10 @@
 
                     <!-- Event Card 3 -->
                     <div
-                        class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+                        class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105 sm:col-span-2 lg:col-span-1"
                     >
                         <div
-                            class="w-[400px] h-[446px] bg-gray-200 flex items-center justify-center"
+                            class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                         >
                             <img
                                 src="/images/berita/foto-log-book-1756512049.jpeg"
@@ -203,16 +202,16 @@
                                 class="object-cover w-full h-full"
                             />
                         </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-xl mb-2">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg sm:text-xl mb-2">
                                 Sosialisasi Gemar Menabung
                             </h3>
-                            <p>
+                            <p class="text-sm sm:text-base text-gray-600 mb-4">
                                 Sosialisasi GEMBIRA SEJAK DINI(Gemar Menabung Bina Kemandirian Sejak Dini) di SDN 90 Rakadua
                             </p>
                             <button
                                 @click="showComingSoonAlert"
-                                class="mt-4 bg-[#0992d6] text-white px-4 py-2 rounded hover:bg-[#0882c0] transition-colors duration-200"
+                                class="w-full sm:w-auto bg-[#0992d6] text-white px-4 py-2 rounded hover:bg-[#0882c0] transition-colors duration-200 text-sm sm:text-base"
                             >
                                 Lihat Selengkapnya
                             </button>
@@ -228,66 +227,65 @@
         <!-- Galery Section -->
         <div
             id="gallery"
-            class="bg-100 py-3 invisible opacity-0 transition-all duration-1000"
+            class="bg-gray-50 py-12 sm:py-16 invisible opacity-0 transition-all duration-1000"
             ref="gallery"
             style="transform: scale(0.95)"
         >
             <div class="container mx-auto px-4">
                 <h2
-                    class="text-3xl font-bold text-center mb-4"
+                    class="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8"
                     style="color: #1a1a1a"
                 >
                     Foto Desa Kami
                 </h2>
-                <div class="flex justify-end mb-4">
+                <div class="flex justify-end mb-6 sm:mb-8">
                     <router-link
                         to="/paket-tour"
-                        class="text-[#0992d6] hover:text-[#0882c0] flex items-center"
+                        class="text-[#0992d6] hover:text-[#0882c0] flex items-center text-sm sm:text-base"
                     >
-                        
-                        
+                        Lihat Semua
                     </router-link>
                 </div>
                 <p
-                    class="text-center mb-12"
+                    class="text-center mb-8 sm:mb-12 text-sm sm:text-base"
                     style="font-family: 'Noto Sans', sans-serif; color: #1a1a1a"
                 >
-                    
+                    Dokumentasi kegiatan dan keindahan Desa Rakadua
                 </p>
-                <div class="grid grid-cols-12 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-6">
                     <!-- Large image spanning 8 columns -->
                     <div
-                        class="col-span-8 bg-white rounded-lg overflow-hidden shadow-md relative group"
+                        class="sm:col-span-2 lg:col-span-8 bg-white rounded-lg overflow-hidden shadow-md relative group"
                     >
                         <img
                             src="/images/galery/galeri1.jpg"
                             alt="Desa Foto 1"
-                            class="w-full h-[400px] object-cover"
+                            class="w-full h-48 sm:h-64 lg:h-[400px] object-cover"
                         />
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                         >
-                            <p class="text-white/100 p-4">
-                                
+                            <p class="text-white/100 p-4 text-sm sm:text-base">
+                                Keindahan Pantai Desa Rakadua
                             </p>
                         </div>
                     </div>
 
                     <!-- Two smaller images stacked vertically -->
-                    <div class="col-span-4 grid grid-rows-2 gap-4">
+                    <div class="sm:col-span-2 lg:col-span-4 grid grid-rows-2 gap-4 sm:gap-6">
                         <div
                             class="bg-white rounded-lg overflow-hidden shadow-md relative group"
                         >
                             <img
                                 src="/images/galery/galeri2.jpg"
                                 alt="Desa Foto 2"
-                                class="w-full h-[190px] object-cover"
+                                class="w-full h-32 sm:h-40 lg:h-[190px] object-cover"
                             />
                             <div
                                 class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                             >
-                                <p class="text-white/100 p-4">
-                                    
+                                <p class="text-white/100 p-3 sm:p-4 text-xs sm:text-sm">
+                                    Aktivitas Nelayan
                                 </p>
                             </div>
                         </div>
@@ -297,13 +295,13 @@
                             <img
                                 src="/images/galery/galeri3.jpg"
                                 alt="Desa Foto 3"
-                                class="w-full h-[190px] object-cover"
+                                class="w-full h-32 sm:h-40 lg:h-[190px] object-cover"
                             />
                             <div
                                 class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                             >
-                                <p class="text-white/100 p-4">
-                                    
+                                <p class="text-white/100 p-3 sm:p-4 text-xs sm:text-sm">
+                                    Kehidupan Masyarakat
                                 </p>
                             </div>
                         </div>
@@ -311,52 +309,52 @@
 
                     <!-- Large image spanning 6 columns -->
                     <div
-                        class="col-span-6 bg-white rounded-lg overflow-hidden shadow-md relative group"
+                        class="sm:col-span-2 lg:col-span-6 bg-white rounded-lg overflow-hidden shadow-md relative group"
                     >
                         <img
                             src="/images/galery/galeri4.jpg"
                             alt="Desa Foto 4"
-                            class="w-full h-[300px] object-cover"
+                            class="w-full h-48 sm:h-56 lg:h-[300px] object-cover"
                         />
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                         >
-                            <p class="text-white/100 p-4">
-                                
+                            <p class="text-white/100 p-3 sm:p-4 text-sm sm:text-base">
+                                Dermaga Nelayan
                             </p>
                         </div>
                     </div>
 
                     <!-- Two smaller images side by side -->
                     <div
-                        class="col-span-3 bg-white rounded-lg overflow-hidden shadow-md relative group"
+                        class="sm:col-span-1 lg:col-span-3 bg-white rounded-lg overflow-hidden shadow-md relative group"
                     >
                         <img
                             src="/images/galery/galeri5.jpg"
                             alt="Desa Foto 5"
-                            class="w-full h-[300px] object-cover"
+                            class="w-full h-48 sm:h-56 lg:h-[300px] object-cover"
                         />
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                         >
-                            <p class="text-white/100 p-4">
-                                
+                            <p class="text-white/100 p-3 sm:p-4 text-xs sm:text-sm">
+                                UMKM Lokal
                             </p>
                         </div>
                     </div>
                     <div
-                        class="col-span-3 bg-white rounded-lg overflow-hidden shadow-md relative group"
+                        class="sm:col-span-1 lg:col-span-3 bg-white rounded-lg overflow-hidden shadow-md relative group"
                     >
                         <img
                             src="/images/galery/galeri6.jpg"
                             alt="Desa Foto 6"
-                            class="w-full h-[300px] object-cover"
+                            class="w-full h-48 sm:h-56 lg:h-[300px] object-cover"
                         />
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
                         >
-                            <p class="text-white/100 p-4">
-                                
+                            <p class="text-white/100 p-3 sm:p-4 text-xs sm:text-sm">
+                                Budaya Lokal
                             </p>
                         </div>
                     </div>
@@ -366,98 +364,102 @@
 
         <!-- Footer -->
         <footer
-            class="bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] text-white py-16"
+            class="bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] text-white py-12 sm:py-16"
         >
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8">
                     <!-- Contact & Social Media -->
-                    <div class="md:col-span-4">
+                    <div class="sm:col-span-2 lg:col-span-4">
                         <img
                             src="/images/logo/logo-umkm.png"
                             alt="Logo Bungkutoko"
-                            class="h-24 mb-6"
+                            class="h-16 sm:h-20 lg:h-24 mb-4 sm:mb-6"
                         />
-                        <p class="text-gray-300 mb-6">
+                        <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                             Jelajahi Keberagaman UMKM Desa Rakadua
                         </p>
-                        <div class="flex space-x-4">
+                        <div class="flex space-x-3 sm:space-x-4">
                             <a
                                 href="#"
-                                class="bg-white/10 hover:bg-[#0992d6] p-3 rounded-full transition-colors"
+                                class="bg-white/10 hover:bg-[#0992d6] p-2 sm:p-3 rounded-full transition-colors"
                             >
-                                <i class="fab fa-instagram text-xl"></i>
+                                <i class="fab fa-instagram text-lg sm:text-xl"></i>
                             </a>
                             <a
                                 href="#"
-                                class="bg-white/10 hover:bg-[#0992d6] p-3 rounded-full transition-colors"
+                                class="bg-white/10 hover:bg-[#0992d6] p-2 sm:p-3 rounded-full transition-colors"
                             >
-                                <i class="fab fa-facebook text-xl"></i>
+                                <i class="fab fa-facebook text-lg sm:text-xl"></i>
                             </a>
                             <a
                                 href="#"
-                                class="bg-white/10 hover:bg-[#0992d6] p-3 rounded-full transition-colors"
+                                class="bg-white/10 hover:bg-[#0992d6] p-2 sm:p-3 rounded-full transition-colors"
                             >
-                                <i class="fab fa-youtube text-xl"></i>
+                                <i class="fab fa-youtube text-lg sm:text-xl"></i>
                             </a>
                         </div>
                     </div>
 
                     <!-- Quick Links -->
-                    <div class="md:col-span-2">
-                        <h4 class="text-lg font-semibold mb-4"></h4>
+                    <div class="sm:col-span-1 lg:col-span-2">
+                        <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Menu</h4>
                         <ul class="space-y-2">
                             <li>
                                 <router-link
                                     to="/"
-                                    class="text-gray-300 hover:text-[#0992d6] transition-colors"
-                                    ></router-link
+                                    class="text-gray-300 hover:text-[#0992d6] transition-colors text-sm sm:text-base"
+                                    >Home</router-link
                                 >
                             </li>
                             <li>
                                 <router-link
                                     to="/sejarah"
-                                    class="text-gray-300 hover:text-[#0992d6] transition-colors"
-                                    ></router-link
+                                    class="text-gray-300 hover:text-[#0992d6] transition-colors text-sm sm:text-base"
+                                    >Sejarah</router-link
                                 >
                             </li>
-                            
-                            
+                            <li>
+                                <router-link
+                                    to="/produk-lokal"
+                                    class="text-gray-300 hover:text-[#0992d6] transition-colors text-sm sm:text-base"
+                                    >Produk Lokal</router-link
+                                >
+                            </li>
                         </ul>
                     </div>
 
                     <!-- Wisata -->
-                    <div class="md:col-span-3">
-                        <h4 class="text-lg font-semibold mb-4">
-                           
+                    <div class="sm:col-span-1 lg:col-span-3">
+                        <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+                           Wisata
                         </h4>
                         <ul class="space-y-2">
-                            <li class="text-gray-300"></li>
-                            <li class="text-gray-300"></li>
-                            <li class="text-gray-300"></li>
-                            <li class="text-gray-300"></li>
+                            <li class="text-gray-300 text-sm sm:text-base">Pantai Rakadua</li>
+                            <li class="text-gray-300 text-sm sm:text-base">Dermaga Nelayan</li>
+                            <li class="text-gray-300 text-sm sm:text-base">UMKM Lokal</li>
+                            <li class="text-gray-300 text-sm sm:text-base">Budaya Bahari</li>
                         </ul>
                     </div>
 
                     <!-- Contact Info -->
-                    <div class="md:col-span-3">
-                        <h4 class="text-lg font-semibold mb-4">Hubungi Kami</h4>
-                        <div class="space-y-4">
+                    <div class="sm:col-span-2 lg:col-span-3">
+                        <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Hubungi Kami</h4>
+                        <div class="space-y-3 sm:space-y-4">
                             <div class="flex items-start space-x-3">
                                 <i
-                                    class="fas fa-map-marker-alt mt-1 text-[#0992d6]"
+                                    class="fas fa-map-marker-alt mt-1 text-[#0992d6] text-sm sm:text-base"
                                 ></i>
-                                <p class="text-gray-300">
-                                    Desa Rakadua, Kec. Poleang Barat, Kab. Bombana
-                                    , Sulawesi Tenggara
+                                <p class="text-gray-300 text-sm sm:text-base">
+                                    Desa Rakadua, Kec. Poleang Barat, Kab. Bombana, Sulawesi Tenggara
                                 </p>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <i class="fas fa-phone text-[#0992d6]"></i>
-                                <p class="text-gray-300">+62 00-0000-0000</p>
+                                <i class="fas fa-phone text-[#0992d6] text-sm sm:text-base"></i>
+                                <p class="text-gray-300 text-sm sm:text-base">+62 00-0000-0000</p>
                             </div>
                             <div class="flex items-center space-x-3">
-                                <i class="fas fa-envelope text-[#0992d6]"></i>
-                                <p class="text-gray-300">rakadua@gmail.com</p>
+                                <i class="fas fa-envelope text-[#0992d6] text-sm sm:text-base"></i>
+                                <p class="text-gray-300 text-sm sm:text-base">rakadua@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -465,9 +467,9 @@
 
                 <!-- Copyright -->
                 <div
-                    class="border-t border-white/10 mt-12 pt-8 text-center text-gray-400"
+                    class="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-400"
                 >
-                    <p>
+                    <p class="text-sm sm:text-base">
                         &copy; 2024 Desa Rakadua. All rights reserved.
                     </p>
                 </div>

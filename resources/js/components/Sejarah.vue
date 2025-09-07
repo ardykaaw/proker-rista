@@ -15,22 +15,24 @@
       </div>
 
       <!-- Hero Content -->
-      <div class="relative z-10 h-full flex flex-col justify-start items-center px-20 max-w-7xl mx-auto pt-42">
-        <h1 class="text-6xl font-bold text-white mb-4" style="font-family: 'Poppins', sans-serif;">
+      <div class="relative z-10 h-full flex flex-col justify-start items-center px-4 sm:px-6 md:px-20 max-w-7xl mx-auto pt-20 sm:pt-32 md:pt-42">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center" style="font-family: 'Poppins', sans-serif;">
           Sejarah Desa Rakadua
         </h1>
-        <p class="text-sm text-white mb-8 text-center" style="font-family: 'Poppins', sans-serif;">
-          Sejarah singkat Rakadua tidak terlepas dari asal-usul namanya. Nama Rakadua diyakini berasal dari bahasa lokal setempat, yang berarti “dua rakit” atau “dua jalur” — merujuk pada letak desa yang berada di antara dua alur perairan yang menjadi jalur transportasi dan perdagangan masyarakat. Pada masa lampau, wilayah ini dikenal sebagai titik singgah nelayan dan pedagang yang melintas di pesisir barat Poleang. Mereka menggunakan rakit atau perahu kecil untuk menyeberang dan membawa hasil laut, sehingga sebutan Rakadua perlahan melekat.
-
-Awal mula pemukiman di Rakadua diyakini berasal dari kelompok masyarakat pesisir yang terdiri dari suku-suku lokal Poleang, yang kemudian berinteraksi dengan pendatang dari Bugis, Buton, dan Bajo. Pendatang ini umumnya datang untuk berdagang atau mencari penghidupan di sektor kelautan. Hubungan pernikahan dan perdagangan membuat komunitas Rakadua semakin beragam, namun tetap memegang budaya maritim yang kuat.
-        </p>
-        <p class="text-sm text-white mb-8 text-center" style="font-family: 'Poppins', sans-serif;">
-          Pada masa kolonial Belanda, Rakadua menjadi salah satu titik penting di jalur perairan Teluk Bone yang menghubungkan beberapa desa pesisir di Poleang Barat. Meskipun tidak menjadi pusat militer atau perdagangan besar, keberadaan dermaga kecil dan jalur laut menjadikan Rakadua dikenal sebagai desa nelayan yang ramai. Perahu layar tradisional kerap berlabuh untuk membawa ikan, garam, dan hasil kebun.
-
-Pemukiman awal di Rakadua didominasi rumah panggung dari kayu, menghadap langsung ke laut atau sungai kecil di tepi desa. Posisi ini memudahkan masyarakat mengawasi perahu dan aktivitas tangkap ikan. Namun, seiring waktu dan kebijakan pembangunan pemerintah, pola pemukiman mulai bergeser. Rumah-rumah banyak dibangun mengikuti badan jalan utama, sebagian menjauh dari garis pantai, sehingga orientasi kehidupan yang dulunya sepenuhnya ke laut mulai beralih ke darat.
-
-Hingga kini, Desa Rakadua tetap mempertahankan identitasnya sebagai desa pesisir. Sebagian besar penduduk masih bergantung pada sektor perikanan, baik tangkap maupun budidaya, sementara kelompok UMKM — terutama yang dikelola oleh perempuan — mengolah hasil laut menjadi produk bernilai jual. Budaya gotong royong, upacara adat, dan tradisi bahari tetap hidup, menjadikan Rakadua bukan hanya pusat aktivitas ekonomi pesisir, tetapi juga simpul budaya di Poleang Barat.
-        </p>
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs sm:text-sm text-white mb-4 sm:mb-6 text-center leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+            Sejarah singkat Rakadua tidak terlepas dari asal-usul namanya. Nama Rakadua diyakini berasal dari bahasa lokal setempat, yang berarti "dua rakit" atau "dua jalur" — merujuk pada letak desa yang berada di antara dua alur perairan yang menjadi jalur transportasi dan perdagangan masyarakat. Pada masa lampau, wilayah ini dikenal sebagai titik singgah nelayan dan pedagang yang melintas di pesisir barat Poleang.
+          </p>
+          <p class="text-xs sm:text-sm text-white mb-4 sm:mb-6 text-center leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+            Awal mula pemukiman di Rakadua diyakini berasal dari kelompok masyarakat pesisir yang terdiri dari suku-suku lokal Poleang, yang kemudian berinteraksi dengan pendatang dari Bugis, Buton, dan Bajo. Pendatang ini umumnya datang untuk berdagang atau mencari penghidupan di sektor kelautan. Hubungan pernikahan dan perdagangan membuat komunitas Rakadua semakin beragam, namun tetap memegang budaya maritim yang kuat.
+          </p>
+          <p class="text-xs sm:text-sm text-white mb-4 sm:mb-6 text-center leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+            Pada masa kolonial Belanda, Rakadua menjadi salah satu titik penting di jalur perairan Teluk Bone yang menghubungkan beberapa desa pesisir di Poleang Barat. Meskipun tidak menjadi pusat militer atau perdagangan besar, keberadaan dermaga kecil dan jalur laut menjadikan Rakadua dikenal sebagai desa nelayan yang ramai.
+          </p>
+          <p class="text-xs sm:text-sm text-white mb-6 sm:mb-8 text-center leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+            Hingga kini, Desa Rakadua tetap mempertahankan identitasnya sebagai desa pesisir. Sebagian besar penduduk masih bergantung pada sektor perikanan, baik tangkap maupun budidaya, sementara kelompok UMKM — terutama yang dikelola oleh perempuan — mengolah hasil laut menjadi produk bernilai jual. Budaya gotong royong, upacara adat, dan tradisi bahari tetap hidup, menjadikan Rakadua bukan hanya pusat aktivitas ekonomi pesisir, tetapi juga simpul budaya di Poleang Barat.
+          </p>
+        </div>
       </div>
     </div>
 

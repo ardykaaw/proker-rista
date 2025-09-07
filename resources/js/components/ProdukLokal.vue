@@ -13,16 +13,16 @@
             </div>
 
             <div
-                class="absolute z-10 h-full flex flex-col justify-center items-start px-20 max-w-7xl mx-auto"
+                class="absolute z-10 h-full flex flex-col justify-center items-start px-4 sm:px-6 md:px-20 max-w-7xl mx-auto"
             >
                 <h1
-                    class="text-6xl font-bold text-white mb-4"
+                    class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
                     style="font-family: 'Poppins', sans-serif"
                 >
                     Produk Lokal
                 </h1>
                 <p
-                    class="text-xl text-white mb-8"
+                    class="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 max-w-2xl"
                     style="font-family: 'Poppins', sans-serif"
                 >
                     Temukan keunikan produk lokal Desa Rakadua
@@ -44,22 +44,20 @@
         </div>
 
         <!-- Content Section -->
-        <div class="py-16 bg-gray-50">
+        <div class="py-12 sm:py-16 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-4">
                     Produk Lokal Unggulan
                 </h2>
-                <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-                    Nikmati berbagai produk lokal berkualitas dari Desa
-                    Bungkutoko. Setiap pembelian membantu mendukung pengrajin
-                    lokal kami.
+                <p class="text-gray-600 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base">
+                    Nikmati berbagai produk lokal berkualitas dari Desa Rakadua. Setiap pembelian membantu mendukung pengrajin lokal kami.
                 </p>
 
                 <!-- Filter and Sort Section -->
-                <div class="flex justify-between items-center mb-8">
-                    <div class="flex space-x-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-8 gap-4">
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
                         <select
-                            class="px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="px-3 sm:px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base w-full sm:w-auto"
                         >
                             <option value="">Semua Kategori</option>
                             <option value="makanan">Makanan</option>
@@ -67,9 +65,9 @@
                             <option value="fashion">Fashion</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="w-full sm:w-auto">
                         <select
-                            class="px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="px-3 sm:px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base w-full sm:w-auto"
                         >
                             <option value="terbaru">Terbaru</option>
                             <option value="termurah">
@@ -84,7 +82,7 @@
 
                 <!-- Products Grid -->
                 <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
                 >
                     <!-- Product Card -->
                     <div
@@ -97,52 +95,52 @@
                                 v-if="product.image"
                                 :src="product.image"
                                 :alt="product.name"
-                                class="w-full h-64 object-cover"
+                                class="w-full h-48 sm:h-56 lg:h-64 object-cover"
                             />
-                            <div v-else class="w-full h-64 bg-gray-200 flex items-center justify-center">
+                            <div v-else class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center">
                                 <div class="text-center p-4">
-                                    <svg class="w-16 h-16 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
-                                    <p class="text-gray-500 text-sm">{{ product.name }}</p>
+                                    <p class="text-gray-500 text-xs sm:text-sm">{{ product.name }}</p>
                                     <p class="text-gray-400 text-xs">Gambar produk akan ditambahkan</p>
                                 </div>
                             </div>
-                            <div v-if="product.badge" class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm">
+                            <div v-if="product.badge" class="absolute top-2 sm:top-4 right-2 sm:right-4 bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
                                 {{ product.badge }}
                             </div>
                         </div>
-                        <div class="p-6">
-                            <div class="text-sm text-blue-600 font-medium mb-2">
+                        <div class="p-4 sm:p-6">
+                            <div class="text-xs sm:text-sm text-blue-600 font-medium mb-2">
                                 {{ product.category }}
                             </div>
                             <h3
-                                class="text-lg font-semibold text-gray-800 mb-2"
+                                class="text-base sm:text-lg font-semibold text-gray-800 mb-2"
                             >
                                 {{ product.name }}
                             </h3>
-                            <p class="text-gray-600 text-sm mb-4">
+                            <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                                 {{ product.description }}
                             </p>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-2xl font-bold text-gray-900"
+                            <div class="flex justify-between items-center mb-3 sm:mb-4">
+                                <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900"
                                     >Rp
                                     {{ product.price.toLocaleString() }}</span
                                 >
-                                <span class="text-sm text-gray-500"
+                                <span class="text-xs sm:text-sm text-gray-500"
                                     >Stok: {{ product.stock }}</span
                                 >
                             </div>
-                            <div class="flex space-x-3">
+                            <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
                                 <button
                                     @click="addToCart(product)"
-                                    class="flex-1 bg-gray-100 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                                    class="flex-1 bg-gray-100 text-gray-800 py-2 px-3 sm:px-4 rounded-lg hover:bg-gray-200 transition-colors duration-200 text-xs sm:text-sm"
                                 >
                                     + Keranjang
                                 </button>
                                 <button
                                     @click="openWhatsApp(product)"
-                                    class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                                    class="flex-1 bg-blue-600 text-white py-2 px-3 sm:px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-xs sm:text-sm"
                                 >
                                     Beli Sekarang
                                 </button>
@@ -154,20 +152,20 @@
                 <!-- Shopping Cart Popup -->
                 <div
                     v-if="showCart"
-                    class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
+                    class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
                 >
-                    <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+                    <div class="bg-white rounded-lg p-4 sm:p-6 max-w-md w-full mx-4 max-h-[90vh] overflow-hidden flex flex-col">
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-semibold">
+                            <h3 class="text-base sm:text-lg font-semibold">
                                 Keranjang Belanja
                             </h3>
                             <button
                                 @click="showCart = false"
-                                class="text-gray-500 hover:text-gray-700"
+                                class="text-gray-500 hover:text-gray-700 p-1"
                             >
                                 <span class="sr-only">Close</span>
                                 <svg
-                                    class="w-6 h-6"
+                                    class="w-5 h-5 sm:w-6 sm:h-6"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -181,18 +179,18 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="max-h-96 overflow-y-auto">
+                        <div class="flex-1 overflow-y-auto">
                             <div
                                 v-for="item in cart"
                                 :key="item.id"
-                                class="flex items-center py-4 border-b"
+                                class="flex items-center py-3 sm:py-4 border-b"
                             >
                                 <!-- Placeholder Image in Cart -->
                                 <div
-                                    class="w-16 h-16 bg-gray-200 rounded flex items-center justify-center"
+                                    class="w-12 h-12 sm:w-16 sm:h-16 bg-gray-200 rounded flex items-center justify-center flex-shrink-0"
                                 >
                                     <svg
-                                        class="w-8 h-8 text-gray-400"
+                                        class="w-6 h-6 sm:w-8 sm:h-8 text-gray-400"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -205,27 +203,27 @@
                                         />
                                     </svg>
                                 </div>
-                                <div class="ml-4 flex-1">
-                                    <h4 class="text-sm font-medium">
+                                <div class="ml-3 sm:ml-4 flex-1 min-w-0">
+                                    <h4 class="text-xs sm:text-sm font-medium truncate">
                                         {{ item.name }}
                                     </h4>
-                                    <p class="text-sm text-gray-500">
+                                    <p class="text-xs sm:text-sm text-gray-500">
                                         Rp {{ item.price.toLocaleString() }}
                                     </p>
                                 </div>
-                                <div class="flex items-center">
+                                <div class="flex items-center ml-2">
                                     <button
                                         @click="decreaseQuantity(item)"
-                                        class="text-gray-500 hover:text-gray-700"
+                                        class="text-gray-500 hover:text-gray-700 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
                                     >
                                         -
                                     </button>
-                                    <span class="mx-2 w-8 text-center">{{
+                                    <span class="mx-2 w-6 sm:w-8 text-center text-xs sm:text-sm">{{
                                         item.quantity
                                     }}</span>
                                     <button
                                         @click="increaseQuantity(item)"
-                                        class="text-gray-500 hover:text-gray-700"
+                                        class="text-gray-500 hover:text-gray-700 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
                                     >
                                         +
                                     </button>
@@ -233,14 +231,14 @@
                             </div>
                         </div>
                         <div class="mt-4 border-t pt-4">
-                            <div class="flex justify-between mb-4">
-                                <span class="font-medium">Total:</span>
-                                <span class="font-bold"
+                            <div class="flex justify-between mb-3 sm:mb-4">
+                                <span class="font-medium text-sm sm:text-base">Total:</span>
+                                <span class="font-bold text-sm sm:text-base"
                                     >Rp {{ cartTotal.toLocaleString() }}</span
                                 >
                             </div>
                             <button
-                                class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                                class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base"
                             >
                                 Checkout
                             </button>
