@@ -858,27 +858,57 @@
                 async fetchProducts() {
                     try {
                         console.log('Fetching products from API...');
-                        console.log('API URL:', window.location.origin + '/api/products');
+                        console.log('Current URL:', window.location.href);
+                        console.log('Origin:', window.location.origin);
                         
-                        const response = await fetch('/api/products', {
-                            method: 'GET',
-                            headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json',
+                        // Try multiple API endpoints
+                        const apiUrls = [
+                            '/api/products',
+                            window.location.origin + '/api/products',
+                            window.location.origin + '/public/api/products',
+                            '/test-api'
+                        ];
+                        
+                        let response = null;
+                        let data = null;
+                        
+                        for (const url of apiUrls) {
+                            try {
+                                console.log('Trying API URL:', url);
+                                response = await fetch(url, {
+                                    method: 'GET',
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'Content-Type': 'application/json',
+                                    }
+                                });
+                                
+                                console.log('API Response status for', url, ':', response.status);
+                                
+                                if (response.ok) {
+                                    data = await response.json();
+                                    console.log('Success with URL:', url);
+                                    console.log('Products data received:', data);
+                                    break;
+                                } else {
+                                    const errorText = await response.text();
+                                    console.warn('Failed with URL:', url, 'Status:', response.status, 'Error:', errorText);
+                                }
+                            } catch (urlError) {
+                                console.warn('Error with URL:', url, 'Error:', urlError.message);
                             }
-                        });
-                        
-                        console.log('API Response status:', response.status);
-                        console.log('API Response headers:', response.headers);
-                        
-                        if (!response.ok) {
-                            const errorText = await response.text();
-                            console.error('API Error Response:', errorText);
-                            throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
                         }
                         
-                        const data = await response.json();
-                        console.log('Products data received:', data);
+                        if (!response || !response.ok) {
+                            throw new Error('All API endpoints failed');
+                        }
+                        
+                        // Handle test-api response format
+                        if (data.status === 'success') {
+                            data = data.products;
+                        }
+                        
+                        console.log('Final products data:', data);
                         console.log('Number of products:', data.length);
                         
                         if (data.length === 0) {

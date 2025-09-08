@@ -10,7 +10,19 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return response()->json(Product::orderByDesc('created_at')->get());
+        try {
+            \Log::info('ProductController::index called');
+            $products = Product::orderByDesc('created_at')->get();
+            \Log::info('Products found: ' . $products->count());
+            \Log::info('Products data: ' . $products->toJson());
+            
+            return response()->json($products)->header('Access-Control-Allow-Origin', '*')
+                ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+                ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-CSRF-TOKEN');
+        } catch (\Exception $e) {
+            \Log::error('ProductController::index error: ' . $e->getMessage());
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
     public function store(Request $request)
