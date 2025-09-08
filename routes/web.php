@@ -17,9 +17,14 @@ Route::prefix('api')->group(function () {
     Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 });
 
-// Root route - redirect to home
+// Root route - serve Vue app
 Route::get('/', function () {
     return view('app');
+});
+
+// Fallback route for when assets are not loaded
+Route::get('/fallback', function () {
+    return view('fallback');
 });
 
 // SPA catch-all - semua route lainnya akan menampilkan Vue app

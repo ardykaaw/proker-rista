@@ -24,4 +24,20 @@ export default defineConfig({
             vue: 'vue/dist/vue.esm-bundler.js',
         },
     },
+    build: {
+        outDir: 'public/build',
+        assetsDir: 'assets',
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['vue', 'vue-router']
+                }
+            }
+        }
+    },
+    server: {
+        hmr: {
+            host: 'localhost',
+        },
+    },
 });

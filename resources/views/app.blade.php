@@ -51,12 +51,26 @@
     <script>
         // Hide loading screen when Vue app is mounted
         document.addEventListener('DOMContentLoaded', function() {
+            // Check if Vue app is loaded
+            const checkVueApp = setInterval(function() {
+                const app = document.getElementById('app');
+                if (app && app.children.length > 1) {
+                    const loading = document.getElementById('loading');
+                    if (loading) {
+                        loading.style.display = 'none';
+                    }
+                    clearInterval(checkVueApp);
+                }
+            }, 100);
+            
+            // Fallback timeout
             setTimeout(function() {
                 const loading = document.getElementById('loading');
                 if (loading) {
                     loading.style.display = 'none';
                 }
-            }, 1000);
+                clearInterval(checkVueApp);
+            }, 3000);
         });
     </script>
 </body>

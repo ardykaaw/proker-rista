@@ -131,20 +131,54 @@ php artisan view:cache
 
 ## 🐛 Troubleshooting
 
-### Jika Homepage tidak muncul:
-1. Cek file `.htaccess` di folder `public`
-2. Pastikan `APP_URL` di `.env` sesuai dengan domain
-3. Clear cache: `php artisan cache:clear`
+### Jika Homepage menampilkan app.blade.php tanpa Vue.js:
+1. **Cek Assets Build**:
+   ```bash
+   # Pastikan folder public/build ada
+   ls -la public/build/
+   
+   # Jika tidak ada, rebuild assets
+   npm run build
+   ```
+
+2. **Cek Vite Manifest**:
+   - Pastikan file `public/build/.vite/manifest.json` ada
+   - Jika tidak ada, jalankan `npm run build`
+
+3. **Cek Environment**:
+   ```bash
+   # Pastikan APP_ENV=production
+   # Pastikan APP_DEBUG=false
+   # Pastikan APP_URL=https://yourdomain.com
+   ```
+
+4. **Clear Cache**:
+   ```bash
+   php artisan config:clear
+   php artisan route:clear
+   php artisan view:clear
+   php artisan cache:clear
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   ```
 
 ### Jika Assets tidak load:
 1. Pastikan folder `public/build` ada dan berisi file CSS/JS
 2. Cek permission folder `public`
 3. Rebuild assets: `npm run build`
+4. Cek file `.htaccess` di folder `public`
 
 ### Jika Database Error:
 1. Cek konfigurasi database di `.env`
 2. Pastikan database user memiliki permission yang cukup
 3. Run migration: `php artisan migrate`
+
+### Jika Vue.js tidak load sama sekali:
+1. **Cek Console Browser** untuk error JavaScript
+2. **Cek Network Tab** untuk melihat apakah assets gagal load
+3. **Test Fallback Route**: Akses `/fallback` untuk melihat halaman fallback
+4. **Cek PHP Version**: Pastikan menggunakan PHP 8.1+
 
 ## 📱 Mobile Responsive
 Setelah deployment, test tampilan mobile di berbagai device untuk memastikan responsive design berfungsi dengan baik.
