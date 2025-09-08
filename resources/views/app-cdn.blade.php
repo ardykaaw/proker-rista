@@ -608,21 +608,21 @@
                                                 <svg class="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                                 </svg>
-                                                <p class="text-gray-500 text-xs sm:text-sm">{{ product.name }}</p>
+                                                <p class="text-gray-500 text-xs sm:text-sm">@{{ product.name }}</p>
                                                 <p class="text-gray-400 text-xs">Gambar produk akan ditambahkan</p>
                                             </div>
                                         </div>
                                         <div v-if="product.badge" class="absolute top-2 sm:top-4 right-2 sm:right-4 bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-                                            {{ product.badge }}
+                                            @{{ product.badge }}
                                         </div>
                                     </div>
                                     <div class="p-4 sm:p-6">
-                                        <div class="text-xs sm:text-sm text-blue-600 font-medium mb-2">{{ product.category }}</div>
-                                        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">{{ product.name }}</h3>
-                                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">{{ product.description }}</p>
+                                        <div class="text-xs sm:text-sm text-blue-600 font-medium mb-2">@{{ product.category }}</div>
+                                        <h3 class="text-base sm:text-lg font-semibold text-gray-800 mb-2">@{{ product.name }}</h3>
+                                        <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">@{{ product.description }}</p>
                                         <div class="flex justify-between items-center mb-3 sm:mb-4">
-                                            <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">Rp {{ product.price.toLocaleString() }}</span>
-                                            <span class="text-xs sm:text-sm text-gray-500">Stok: {{ product.stock }}</span>
+                                            <span class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">Rp @{{ product.price.toLocaleString() }}</span>
+                                            <span class="text-xs sm:text-sm text-gray-500">Stok: @{{ product.stock }}</span>
                                         </div>
                                         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
                                             <button @click="addToCart(product)" 
@@ -657,13 +657,13 @@
                                                 </svg>
                                             </div>
                                             <div class="ml-3 sm:ml-4 flex-1 min-w-0">
-                                                <h4 class="text-xs sm:text-sm font-medium truncate">{{ item.name }}</h4>
-                                                <p class="text-xs sm:text-sm text-gray-500">Rp {{ item.price.toLocaleString() }}</p>
+                                                <h4 class="text-xs sm:text-sm font-medium truncate">@{{ item.name }}</h4>
+                                                <p class="text-xs sm:text-sm text-gray-500">Rp @{{ item.price.toLocaleString() }}</p>
                                             </div>
                                             <div class="flex items-center ml-2">
                                                 <button @click="decreaseQuantity(item)" 
                                                         class="text-gray-500 hover:text-gray-700 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-gray-100">-</button>
-                                                <span class="mx-2 w-6 sm:w-8 text-center text-xs sm:text-sm">{{ item.quantity }}</span>
+                                                <span class="mx-2 w-6 sm:w-8 text-center text-xs sm:text-sm">@{{ item.quantity }}</span>
                                                 <button @click="increaseQuantity(item)" 
                                                         class="text-gray-500 hover:text-gray-700 w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center rounded-full hover:bg-gray-100">+</button>
                                             </div>
@@ -672,7 +672,7 @@
                                     <div class="mt-4 border-t pt-4">
                                         <div class="flex justify-between mb-3 sm:mb-4">
                                             <span class="font-medium text-sm sm:text-base">Total:</span>
-                                            <span class="font-bold text-sm sm:text-base">Rp {{ cartTotal.toLocaleString() }}</span>
+                                            <span class="font-bold text-sm sm:text-base">Rp @{{ cartTotal.toLocaleString() }}</span>
                                         </div>
                                         <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base">
                                             Checkout
@@ -864,7 +864,7 @@
                                         class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
                                     Sign in
                                 </button>
-                                <div v-if="error" class="text-red-600 text-sm text-center">{{ error }}</div>
+                                <div v-if="error" class="text-red-600 text-sm text-center">@{{ error }}</div>
                             </div>
                         </form>
                     </div>
@@ -941,7 +941,7 @@
                                     <div class="flex items-center justify-between">
                                         <div>
                                             <p class="text-sm text-gray-500">Total Products</p>
-                                            <p class="text-3xl font-extrabold text-gray-900">{{ productCount }}</p>
+                                            <p class="text-3xl font-extrabold text-gray-900">@{{ productCount }}</p>
                                         </div>
                                         <span class="h-12 w-12 inline-flex items-center justify-center rounded-full bg-blue-50 text-blue-600">
                                             <i class="fa-solid fa-box"></i>
@@ -1014,10 +1014,10 @@
                                         </thead>
                                         <tbody class="divide-y divide-gray-100">
                                             <tr v-for="product in products" :key="product.id" class="hover:bg-gray-50">
-                                                <td class="px-4 py-3 text-sm font-medium text-gray-900">{{ product.name }}</td>
-                                                <td class="px-4 py-3 text-sm text-gray-600">{{ product.category || '-' }}</td>
-                                                <td class="px-4 py-3 text-sm text-gray-600">Rp {{ (product.price || 0).toLocaleString() }}</td>
-                                                <td class="px-4 py-3 text-sm text-gray-600">{{ product.stock }}</td>
+                                                <td class="px-4 py-3 text-sm font-medium text-gray-900">@{{ product.name }}</td>
+                                                <td class="px-4 py-3 text-sm text-gray-600">@{{ product.category || '-' }}</td>
+                                                <td class="px-4 py-3 text-sm text-gray-600">Rp @{{ (product.price || 0).toLocaleString() }}</td>
+                                                <td class="px-4 py-3 text-sm text-gray-600">@{{ product.stock }}</td>
                                                 <td class="px-4 py-3 text-right whitespace-nowrap">
                                                     <button @click="openEdit(product)" class="px-3 py-1.5 text-xs bg-yellow-500 text-white rounded mr-2 hover:bg-yellow-600">Edit</button>
                                                     <button @click="confirmDelete(product)" class="px-3 py-1.5 text-xs bg-red-500 text-white rounded hover:bg-red-600">Hapus</button>
