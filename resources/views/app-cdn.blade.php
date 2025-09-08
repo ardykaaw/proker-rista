@@ -100,6 +100,27 @@
         .duration-300 {
             transition-duration: 300ms;
         }
+        
+        /* Backdrop blur support */
+        .backdrop-blur-md {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Router link active state improvements */
+        .router-link-active {
+            font-weight: 600;
+            color: #0992d6 !important;
+        }
+        
+        /* Navbar transparency */
+        .bg-transparent {
+            background-color: transparent;
+        }
+        
+        .bg-white\/95 {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
     </style>
 </head>
 <body>
@@ -121,33 +142,33 @@
         // Navbar Component
         const Navbar = {
             template: `
-                <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+                <nav class="fixed w-full top-0 z-50 transition-all duration-300" :class="navbarClass">
                     <div class="container mx-auto px-4">
                         <div class="flex justify-between items-center py-4">
                             <div class="flex items-center">
                                 <img src="{{ asset('images/logo/logo-gabung.png') }}" alt="Logo" class="h-12 w-auto">
-                                <span class="ml-3 text-xl font-bold text-gray-800">Desa Rakadua</span>
+                                <span class="ml-3 text-xl font-bold" :class="textClass">Desa Rakadua</span>
                             </div>
                             
                             <!-- Mobile menu button -->
-                            <button @click="toggleMobileMenu" class="md:hidden text-gray-600 hover:text-gray-900">
+                            <button @click="toggleMobileMenu" class="md:hidden" :class="textClass">
                                 <i class="fas fa-bars text-xl"></i>
                             </button>
                             
                             <!-- Desktop menu -->
                             <div class="hidden md:flex space-x-8">
-                                <router-link to="/" class="text-gray-600 hover:text-blue-600 font-medium">Beranda</router-link>
-                                <router-link to="/produk-lokal" class="text-gray-600 hover:text-blue-600 font-medium">Produk Lokal</router-link>
-                                <router-link to="/sejarah" class="text-gray-600 hover:text-blue-600 font-medium">Sejarah</router-link>
+                                <router-link to="/" class="font-medium transition-colors" :class="linkClass">Beranda</router-link>
+                                <router-link to="/produk-lokal" class="font-medium transition-colors" :class="linkClass">Produk Lokal</router-link>
+                                <router-link to="/sejarah" class="font-medium transition-colors" :class="linkClass">Sejarah</router-link>
                             </div>
                         </div>
                         
                         <!-- Mobile menu -->
                         <div v-show="showMobileMenu" class="md:hidden pb-4">
                             <div class="flex flex-col space-y-2">
-                                <router-link to="/" class="text-gray-600 hover:text-blue-600 font-medium py-2">Beranda</router-link>
-                                <router-link to="/produk-lokal" class="text-gray-600 hover:text-blue-600 font-medium py-2">Produk Lokal</router-link>
-                                <router-link to="/sejarah" class="text-gray-600 hover:text-blue-600 font-medium py-2">Sejarah</router-link>
+                                <router-link to="/" class="font-medium py-2 transition-colors" :class="linkClass">Beranda</router-link>
+                                <router-link to="/produk-lokal" class="font-medium py-2 transition-colors" :class="linkClass">Produk Lokal</router-link>
+                                <router-link to="/sejarah" class="font-medium py-2 transition-colors" :class="linkClass">Sejarah</router-link>
                             </div>
                         </div>
                     </div>
@@ -155,13 +176,40 @@
             `,
             data() {
                 return {
-                    showMobileMenu: false
+                    showMobileMenu: false,
+                    isScrolled: false
+                }
+            },
+            computed: {
+                navbarClass() {
+                    return this.isScrolled 
+                        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+                        : 'bg-transparent';
+                },
+                textClass() {
+                    return this.isScrolled 
+                        ? 'text-gray-800' 
+                        : 'text-white';
+                },
+                linkClass() {
+                    return this.isScrolled 
+                        ? 'text-gray-600 hover:text-blue-600' 
+                        : 'text-white/90 hover:text-white';
                 }
             },
             methods: {
                 toggleMobileMenu() {
                     this.showMobileMenu = !this.showMobileMenu;
+                },
+                handleScroll() {
+                    this.isScrolled = window.scrollY > 50;
                 }
+            },
+            mounted() {
+                window.addEventListener('scroll', this.handleScroll);
+            },
+            unmounted() {
+                window.removeEventListener('scroll', this.handleScroll);
             }
         };
 
@@ -484,11 +532,75 @@
             }
         };
         
-        // Simple router
+        // Produk Lokal Component
+        const ProdukLokal = {
+            template: `
+                <div class="min-h-screen pt-20">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+                        <div class="container mx-auto px-4 text-center">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">PRODUK LOKAL</h1>
+                            <p class="text-xl mb-8">Berbagai produk unggulan dari UMKM Desa Rakadua</p>
+                        </div>
+                    </div>
+                    
+                    <div class="py-16 bg-gray-100">
+                        <div class="container mx-auto px-4">
+                            <h2 class="text-3xl font-bold text-center mb-8">Produk Unggulan Desa Rakadua</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <h3 class="text-xl font-bold mb-4">Ikan Kering</h3>
+                                    <p class="text-gray-600">Produk olahan ikan segar dengan kualitas terbaik</p>
+                                </div>
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <h3 class="text-xl font-bold mb-4">Terasi</h3>
+                                    <p class="text-gray-600">Terasi khas pesisir dengan cita rasa autentik</p>
+                                </div>
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <h3 class="text-xl font-bold mb-4">Kerajinan Tangan</h3>
+                                    <p class="text-gray-600">Berbagai kerajinan tangan dari bahan lokal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        };
+
+        // Sejarah Component
+        const Sejarah = {
+            template: `
+                <div class="min-h-screen pt-20">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
+                        <div class="container mx-auto px-4 text-center">
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4">SEJARAH</h1>
+                            <p class="text-xl mb-8">Sejarah dan Perjalanan Desa Rakadua</p>
+                        </div>
+                    </div>
+                    
+                    <div class="py-16 bg-gray-100">
+                        <div class="container mx-auto px-4">
+                            <h2 class="text-3xl font-bold text-center mb-8">Sejarah Desa Rakadua</h2>
+                            <div class="max-w-4xl mx-auto">
+                                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                    Desa Rakadua memiliki sejarah panjang sebagai wilayah pesisir yang kaya akan budaya bahari. 
+                                    Sejak dahulu, masyarakat Rakadua telah mengandalkan laut sebagai sumber kehidupan utama.
+                                </p>
+                                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                                    Perkembangan UMKM di Desa Rakadua dimulai dari tradisi turun-temurun dalam mengolah hasil laut, 
+                                    yang kemudian berkembang menjadi industri kreatif yang mendukung perekonomian masyarakat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        };
+
+        // Router configuration
         const routes = [
             { path: '/', component: Home },
-            { path: '/produk-lokal', component: Home },
-            { path: '/sejarah', component: Home }
+            { path: '/produk-lokal', component: ProdukLokal },
+            { path: '/sejarah', component: Sejarah }
         ];
         
         const router = createRouter({
