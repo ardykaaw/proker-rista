@@ -19,12 +19,23 @@ Route::prefix('api')->group(function () {
 
 // Root route - serve Vue app
 Route::get('/', function () {
-    return view('app');
+    // Check if build assets exist
+    if (file_exists(public_path('build/manifest.json'))) {
+        return view('app');
+    } else {
+        // Fallback to CDN version if build assets don't exist
+        return view('app-cdn');
+    }
 });
 
 // Fallback route for when assets are not loaded
 Route::get('/fallback', function () {
     return view('fallback');
+});
+
+// CDN version route
+Route::get('/cdn', function () {
+    return view('app-cdn');
 });
 
 // SPA catch-all - semua route lainnya akan menampilkan Vue app

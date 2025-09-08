@@ -27,17 +27,40 @@ export default defineConfig({
     build: {
         outDir: 'public/build',
         assetsDir: 'assets',
+        // Optimize for limited resources
+        minify: 'terser',
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true,
+            },
+        },
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ['vue', 'vue-router']
+                    vendor: ['vue', 'vue-router'],
+                    utils: ['axios']
                 }
             }
-        }
+        },
+        // Reduce memory usage
+        chunkSizeWarningLimit: 1000,
+        sourcemap: false,
     },
     server: {
         hmr: {
             host: 'localhost',
         },
     },
+    // Optimize for shared hosting
+    optimizeDeps: {
+        include: ['vue', 'vue-router', 'axios']
+    },
+    esbuild: {
+        // Reduce memory usage
+        target: 'es2015',
+        minifyIdentifiers: true,
+        minifySyntax: true,
+        minifyWhitespace: true,
+    }
 });

@@ -49,12 +49,35 @@
     </div>
     
     <script>
+        // Debug script untuk melihat error
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.innerHTML = `
+                    <div style="text-align: center; color: #e53e3e;">
+                        <h3>Error Loading Application</h3>
+                        <p>Error: ${e.message}</p>
+                        <p>File: ${e.filename}:${e.lineno}</p>
+                        <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #3182ce; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            Reload Page
+                        </button>
+                    </div>
+                `;
+            }
+        });
+
         // Hide loading screen when Vue app is mounted
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded');
+            
             // Check if Vue app is loaded
             const checkVueApp = setInterval(function() {
                 const app = document.getElementById('app');
+                console.log('Checking Vue app...', app);
+                
                 if (app && app.children.length > 1) {
+                    console.log('Vue app loaded successfully');
                     const loading = document.getElementById('loading');
                     if (loading) {
                         loading.style.display = 'none';
@@ -63,14 +86,26 @@
                 }
             }, 100);
             
-            // Fallback timeout
+            // Fallback timeout with error message
             setTimeout(function() {
                 const loading = document.getElementById('loading');
-                if (loading) {
-                    loading.style.display = 'none';
+                const app = document.getElementById('app');
+                
+                if (loading && (!app || app.children.length <= 1)) {
+                    console.error('Vue app failed to load');
+                    loading.innerHTML = `
+                        <div style="text-align: center; color: #e53e3e;">
+                            <h3>Application Failed to Load</h3>
+                            <p>Vue.js application tidak berhasil dimuat.</p>
+                            <p>Silakan cek console browser untuk detail error.</p>
+                            <button onclick="location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #3182ce; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                Reload Page
+                            </button>
+                        </div>
+                    `;
                 }
                 clearInterval(checkVueApp);
-            }, 3000);
+            }, 5000);
         });
     </script>
 </body>
