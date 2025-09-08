@@ -622,7 +622,7 @@
                             </div>
 
                             <!-- Products Grid -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                            <div v-if="products.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                                 <!-- Product Card -->
                                 <div v-for="product in products" :key="product.id" 
                                      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -660,6 +660,20 @@
                                                 Beli Sekarang
                                             </button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- No Products Message -->
+                            <div v-else class="text-center py-12">
+                                <div class="max-w-md mx-auto">
+                                    <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                    </svg>
+                                    <h3 class="text-lg font-medium text-gray-900 mb-2">Belum Ada Produk</h3>
+                                    <p class="text-gray-500 mb-4">Produk UMKM akan segera ditambahkan. Silakan kembali lagi nanti.</p>
+                                    <div class="text-sm text-gray-400">
+                                        <p>Admin dapat menambahkan produk melalui halaman <a href="/login" class="text-blue-600 hover:text-blue-800">Admin</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -844,15 +858,34 @@
                 async fetchProducts() {
                     try {
                         console.log('Fetching products from API...');
-                        const response = await fetch('/api/products');
+                        console.log('API URL:', window.location.origin + '/api/products');
+                        
+                        const response = await fetch('/api/products', {
+                            method: 'GET',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json',
+                            }
+                        });
+                        
                         console.log('API Response status:', response.status);
+                        console.log('API Response headers:', response.headers);
                         
                         if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
+                            const errorText = await response.text();
+                            console.error('API Error Response:', errorText);
+                            throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
                         }
                         
                         const data = await response.json();
                         console.log('Products data received:', data);
+                        console.log('Number of products:', data.length);
+                        
+                        if (data.length === 0) {
+                            console.warn('No products found in database');
+                            this.products = [];
+                            return;
+                        }
                         
                         this.products = data.map(p => ({
                             id: p.id,
@@ -867,8 +900,10 @@
                         }));
                         
                         console.log('Products processed:', this.products);
+                        console.log('Products count after processing:', this.products.length);
                     } catch (e) {
                         console.error('Gagal mengambil produk:', e);
+                        console.error('Error details:', e.message);
                         // Kosongkan products jika API gagal
                         this.products = [];
                     }
