@@ -25,9 +25,9 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
     
-    <!-- Vue.js from CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+    <!-- Vue.js from CDN (Production Build) -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -79,20 +79,69 @@
         const { createApp } = Vue;
         const { createRouter, createWebHistory } = VueRouter;
         
-        // Simple Home component
+        // Navbar Component
+        const Navbar = {
+            template: `
+                <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+                    <div class="container mx-auto px-4">
+                        <div class="flex justify-between items-center py-4">
+                            <div class="flex items-center">
+                                <img src="{{ asset('images/logo/logo-gabung.png') }}" alt="Logo" class="h-12 w-auto">
+                                <span class="ml-3 text-xl font-bold text-gray-800">Desa Rakadua</span>
+                            </div>
+                            
+                            <!-- Mobile menu button -->
+                            <button @click="toggleMobileMenu" class="md:hidden text-gray-600 hover:text-gray-900">
+                                <i class="fas fa-bars text-xl"></i>
+                            </button>
+                            
+                            <!-- Desktop menu -->
+                            <div class="hidden md:flex space-x-8">
+                                <router-link to="/" class="text-gray-600 hover:text-blue-600 font-medium">Beranda</router-link>
+                                <router-link to="/produk-lokal" class="text-gray-600 hover:text-blue-600 font-medium">Produk Lokal</router-link>
+                                <router-link to="/sejarah" class="text-gray-600 hover:text-blue-600 font-medium">Sejarah</router-link>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile menu -->
+                        <div v-show="showMobileMenu" class="md:hidden pb-4">
+                            <div class="flex flex-col space-y-2">
+                                <router-link to="/" class="text-gray-600 hover:text-blue-600 font-medium py-2">Beranda</router-link>
+                                <router-link to="/produk-lokal" class="text-gray-600 hover:text-blue-600 font-medium py-2">Produk Lokal</router-link>
+                                <router-link to="/sejarah" class="text-gray-600 hover:text-blue-600 font-medium py-2">Sejarah</router-link>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            `,
+            data() {
+                return {
+                    showMobileMenu: false
+                }
+            },
+            methods: {
+                toggleMobileMenu() {
+                    this.showMobileMenu = !this.showMobileMenu;
+                }
+            }
+        };
+
+        // Home Component
         const Home = {
             template: `
-                <div class="min-h-screen">
-                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+                <div class="min-h-screen pt-20">
+                    <!-- Hero Section -->
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
                         <div class="container mx-auto px-4 text-center">
                             <h1 class="text-4xl md:text-6xl font-bold mb-4">DESA RAKADUA</h1>
                             <p class="text-xl mb-8">Informasi Seputar UMKM Desa Rakadua</p>
-                            <a href="/produk-lokal" class="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+                            <router-link to="/produk-lokal" class="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block">
                                 CEK SEKARANG
-                            </a>
+                            </router-link>
                         </div>
                     </div>
                     
+                    <!-- About Section -->
                     <div class="py-16 bg-gray-100">
                         <div class="container mx-auto px-4">
                             <h2 class="text-3xl font-bold text-center mb-8">Desa Rakadua, Kabupaten Bombana</h2>
@@ -102,6 +151,7 @@
                         </div>
                     </div>
                     
+                    <!-- Features Section -->
                     <div class="py-16 bg-gray-50">
                         <div class="container mx-auto px-4">
                             <h2 class="text-3xl font-bold text-center mb-8">Produk Lokal</h2>
@@ -133,12 +183,21 @@
         ];
         
         const router = createRouter({
-            history: createWebHistory(),
+            history: createWebHistory('/public/'),
             routes
         });
         
         // Create and mount app
         const app = createApp({
+            components: {
+                Navbar
+            },
+            template: `
+                <div>
+                    <Navbar />
+                    <router-view />
+                </div>
+            `,
             mounted() {
                 console.log('Vue app loaded from CDN');
                 const loading = document.getElementById('loading');
