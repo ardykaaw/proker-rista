@@ -388,27 +388,27 @@
     const carouselImages = [
         {
             id: 1,
-            src: "/images/herosection/bg-hero2.jpg",
+            src: "{{ asset('images/herosection/bg-hero2.jpg') }}",
             alt: "Hero Image 1",
         },
         {
             id: 2,
-            src: "/images/herosection/bg-hero6.jpeg",
+            src: "{{ asset('images/herosection/bg-hero6.jpeg') }}",
             alt: "Hero Image 2",
         },
         {
             id: 3,
-            src: "/images/herosection/bg-hero3.jpg",
+            src: "{{ asset('images/herosection/bg-hero3.jpg') }}",
             alt: "Hero Image 3",
         },
         {
             id: 4,
-            src: "/images/herosection/bg-hero7.jpeg",
+            src: "{{ asset('images/herosection/bg-hero7.jpeg') }}",
             alt: "Hero Image 4",
         },
         {
             id: 5,
-            src: "/images/herosection/bg-hero5.jpeg",
+            src: "{{ asset('images/herosection/bg-hero5.jpeg') }}",
             alt: "Hero Image 5",
         },
     ];

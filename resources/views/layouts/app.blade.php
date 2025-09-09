@@ -19,8 +19,21 @@
     <meta name="twitter:title" content="Desa Rakadua">
     <meta name="twitter:description" content="Desa Wisata dan Produk Lokal Kabupaten Bombana">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS CDN - Production Version -->
+    <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'noto': ['Noto Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
