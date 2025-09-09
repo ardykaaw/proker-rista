@@ -164,7 +164,14 @@
         try {
             const response = await fetch('/api/products');
             if (!response.ok) {
-                throw new Error('Failed to fetch products');
+                let errorMessage = 'Gagal memuat produk';
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.message || errorData.error || errorMessage;
+                } catch (e) {
+                    errorMessage = response.statusText || errorMessage;
+                }
+                throw new Error(errorMessage);
             }
             products = await response.json();
             displayProducts(products);

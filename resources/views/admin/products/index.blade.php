@@ -255,7 +255,16 @@
                 }
             });
 
-            if (!response.ok) throw new Error('Failed to delete product');
+            if (!response.ok) {
+                let errorMessage = 'Gagal menghapus produk';
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.message || errorData.error || errorMessage;
+                } catch (e) {
+                    errorMessage = response.statusText || errorMessage;
+                }
+                throw new Error(errorMessage);
+            }
 
             // Remove product from local array
             products = products.filter(p => p.id !== currentDeleteId);

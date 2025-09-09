@@ -17,7 +17,13 @@ class ProductController extends Controller
             // Transform image paths to full URLs
             $products->transform(function ($product) {
                 if ($product->image_path) {
-                    $product->image_path = url($product->image_path);
+                    // Check if image_path already has /storage/ prefix
+                    if (strpos($product->image_path, '/storage/') === 0) {
+                        $product->image_path = url($product->image_path);
+                    } else {
+                        // Add /storage/ prefix if not present
+                        $product->image_path = url('/storage/' . $product->image_path);
+                    }
                 }
                 return $product;
             });
