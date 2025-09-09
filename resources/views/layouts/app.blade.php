@@ -46,6 +46,37 @@
     
     <!-- Custom CSS -->
     <style>
+        /* Image fallback system */
+        .img-fallback {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .img-fallback::before {
+            content: "No Image Available";
+        }
+        
+        /* Ensure images load properly */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Loading state for images */
+        img[data-src] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        img[data-src].loaded {
+            opacity: 1;
+        }
         .navbar-transparent {
             background-color: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
@@ -589,6 +620,32 @@
             if (window.innerWidth >= 1024) {
                 closeMobileMenu();
             }
+        });
+        
+        // Image fallback system
+        function initImageFallback() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                // Add error handler
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const fallback = document.createElement('div');
+                    fallback.className = 'img-fallback';
+                    fallback.style.width = this.style.width || '100%';
+                    fallback.style.height = this.style.height || '200px';
+                    this.parentNode.insertBefore(fallback, this);
+                });
+                
+                // Add load handler
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        }
+        
+        // Initialize image fallback when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initImageFallback();
         });
     </script>
     
