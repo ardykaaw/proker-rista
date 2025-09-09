@@ -13,6 +13,15 @@ class ProductController extends Controller
         try {
             \Log::info('ProductController::index called');
             $products = Product::orderByDesc('created_at')->get();
+            
+            // Transform image paths to full URLs
+            $products->transform(function ($product) {
+                if ($product->image_path) {
+                    $product->image_path = url($product->image_path);
+                }
+                return $product;
+            });
+            
             \Log::info('Products found: ' . $products->count());
             \Log::info('Products data: ' . $products->toJson());
             
