@@ -10,9 +10,10 @@
         <div class="absolute inset-0">
             <img
                 id="hero-image"
-                src="/images/herosection/bg-hero2.jpg"
+                src="{{ asset('images/herosection/bg-hero2.jpg') }}"
                 alt="Hero Image"
                 class="w-full h-full object-cover"
+                onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
             />
             <!-- Dark overlay -->
             <div class="absolute inset-0 bg-black/30"></div>
@@ -113,9 +114,10 @@
             </div>
             <div class="w-full md:w-1/2">
                 <img
-                    src="/images/tentang-kami/image1.jpg"
+                    src="{{ asset('images/tentang-kami/image1.jpg') }}"
                     alt="Desa Wisata Wanurejo"
                     class="w-full h-auto rounded-lg shadow-md"
+                    onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                 />
             </div>
         </div>
@@ -149,9 +151,10 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="/images/berita/WhatsApp Image 2025-09-05 at 12.35.33.jpeg"
+                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.35.33.jpeg') }}"
                             alt="Lomba Foto & Reels"
                             class="object-cover w-full h-full"
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                     </div>
                     <div class="p-4 sm:p-6">
@@ -178,9 +181,10 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="/images/berita/WhatsApp Image 2025-09-05 at 12.44.50.jpeg"
+                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.44.50.jpeg') }}"
                             alt="Event Bulan November 2022"
                             class="object-cover w-full h-full"
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                     </div>
                     <div class="p-4 sm:p-6">
@@ -207,9 +211,10 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="/images/berita/foto-log-book-1756512049.jpeg"
+                            src="{{ asset('images/berita/foto-log-book-1756512049.jpeg') }}"
                             alt="Pagelaran Seni"
                             class="object-cover w-full h-full"
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                     </div>
                     <div class="p-4 sm:p-6">
@@ -263,9 +268,10 @@
                     class="sm:col-span-2 lg:col-span-8 bg-white rounded-lg overflow-hidden shadow-md relative group"
                 >
                     <img
-                        src="/images/galery/galeri1.jpg"
+                        src="{{ asset('images/galery/galeri1.jpg') }}"
                         alt="Desa Foto 1"
                         class="w-full h-48 sm:h-64 lg:h-[400px] object-cover"
+                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                     />
                     <div
                         class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
@@ -282,9 +288,10 @@
                         class="bg-white rounded-lg overflow-hidden shadow-md relative group"
                     >
                         <img
-                            src="/images/galery/galeri2.jpg"
+                            src="{{ asset('images/galery/galeri2.jpg') }}"
                             alt="Desa Foto 2"
                             class="w-full h-32 sm:h-40 lg:h-[190px] object-cover"
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
@@ -298,9 +305,10 @@
                         class="bg-white rounded-lg overflow-hidden shadow-md relative group"
                     >
                         <img
-                            src="/images/galery/galeri3.jpg"
+                            src="{{ asset('images/galery/galeri3.jpg') }}"
                             alt="Desa Foto 3"
                             class="w-full h-32 sm:h-40 lg:h-[190px] object-cover"
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                         <div
                             class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
@@ -317,9 +325,10 @@
                     class="sm:col-span-2 lg:col-span-6 bg-white rounded-lg overflow-hidden shadow-md relative group"
                 >
                     <img
-                        src="/images/galery/galeri4.jpg"
+                        src="{{ asset('images/galery/galeri4.jpg') }}"
                         alt="Desa Foto 4"
                         class="w-full h-48 sm:h-56 lg:h-[300px] object-cover"
+                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                     />
                     <div
                         class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
@@ -335,9 +344,10 @@
                     class="sm:col-span-1 lg:col-span-3 bg-white rounded-lg overflow-hidden shadow-md relative group"
                 >
                     <img
-                        src="/images/galery/galeri5.jpg"
+                        src="{{ asset('images/galery/galeri5.jpg') }}"
                         alt="Desa Foto 5"
                         class="w-full h-48 sm:h-56 lg:h-[300px] object-cover"
+                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                     />
                     <div
                         class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
@@ -351,9 +361,10 @@
                     class="sm:col-span-1 lg:col-span-3 bg-white rounded-lg overflow-hidden shadow-md relative group"
                 >
                     <img
-                        src="/images/galery/galeri6.jpg"
+                        src="{{ asset('images/galery/galeri6.jpg') }}"
                         alt="Desa Foto 6"
                         class="w-full h-48 sm:h-56 lg:h-[300px] object-cover"
+                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                     />
                     <div
                         class="absolute bottom-0 left-0 right-0 h-1/4 bg-black/30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"

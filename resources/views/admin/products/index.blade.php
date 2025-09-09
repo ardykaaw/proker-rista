@@ -183,7 +183,7 @@
                 <img src="${product.image_path}" 
                      alt="${product.name}" 
                      class="w-full h-48 object-cover"
-                     onerror="this.src='/storage/products/EOP36Fy1A2koY60D7zra3aNg8Ha6ILI10iXZeRkh.jpg'">
+                     onerror="this.src='{{ asset('images/placeholder.jpg') }}'">
                 <div class="absolute top-2 right-2">
                     <span class="bg-[#0992d6] text-white px-2 py-1 rounded-full text-xs font-semibold">
                         ${product.category || 'Produk'}

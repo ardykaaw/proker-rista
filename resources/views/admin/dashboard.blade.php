@@ -216,7 +216,7 @@
                 <img src="${product.image_path}" 
                      alt="${product.name}" 
                      class="w-12 h-12 object-cover rounded-lg"
-                     onerror="this.src='/storage/products/EOP36Fy1A2koY60D7zra3aNg8Ha6ILI10iXZeRkh.jpg'">
+                     onerror="this.src='{{ asset('images/placeholder.jpg') }}'">
                 <div class="flex-1">
                     <h4 class="font-semibold text-gray-900" style="font-family: 'Inter', sans-serif">${product.name}</h4>
                     <p class="text-sm text-gray-600" style="font-family: 'Noto Sans', sans-serif">${formatPrice(product.price)}</p>
