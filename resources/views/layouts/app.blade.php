@@ -622,19 +622,22 @@
             }
         });
         
-        // Image fallback system
+        // Image fallback system - only for images that actually fail to load
         function initImageFallback() {
             const images = document.querySelectorAll('img');
             images.forEach(img => {
-                // Add error handler
-                img.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.className = 'img-fallback';
-                    fallback.style.width = this.style.width || '100%';
-                    fallback.style.height = this.style.height || '200px';
-                    this.parentNode.insertBefore(fallback, this);
-                });
+                // Only add fallback if image doesn't have onerror attribute
+                if (!img.hasAttribute('onerror')) {
+                    img.addEventListener('error', function() {
+                        console.log('Image failed to load:', this.src);
+                        this.style.display = 'none';
+                        const fallback = document.createElement('div');
+                        fallback.className = 'img-fallback';
+                        fallback.style.width = this.style.width || '100%';
+                        fallback.style.height = this.style.height || '200px';
+                        this.parentNode.insertBefore(fallback, this);
+                    });
+                }
                 
                 // Add load handler
                 img.addEventListener('load', function() {
