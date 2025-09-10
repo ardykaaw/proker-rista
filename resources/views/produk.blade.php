@@ -251,7 +251,14 @@
         const product = products.find(p => p.id === productId);
         if (!product) return;
         
-        const phoneNumber = product.phone || '6281234567890'; // Default phone number if not provided
+        // Format phone number - add +62 if not present
+        let phoneNumber = product.phone || '81234567890'; // Default phone number if not provided
+        if (!phoneNumber.startsWith('+62') && !phoneNumber.startsWith('62')) {
+            phoneNumber = '62' + phoneNumber;
+        } else if (phoneNumber.startsWith('+62')) {
+            phoneNumber = phoneNumber.substring(1); // Remove + sign
+        }
+        
         const message = `Halo, saya tertarik dengan produk:\n\n*${product.name}*\nHarga: ${formatPrice(product.price)}\nJumlah: ${quantity}\nTotal: ${formatPrice(product.price * quantity)}\n\nApakah produk ini masih tersedia?`;
         
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

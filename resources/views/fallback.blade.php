@@ -82,7 +82,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="images/logo/logo-gabung.png" alt="Desa Rakadua" class="logo">
+        <img src="images/logo/rakadua_logo.png" alt="Desa Rakadua" class="logo">
         <h1>Desa Rakadua</h1>
         <p>Kabupaten Bombana, Sulawesi Tenggara</p>
         <p>Jelajahi keberagaman UMKM dan produk lokal Desa Rakadua</p>

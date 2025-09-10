@@ -97,6 +97,21 @@
                     @enderror
                 </div>
 
+                <!-- Phone (WhatsApp) -->
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Inter', sans-serif">Nomor WhatsApp *</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" style="font-family: 'Noto Sans', sans-serif">+62</span>
+                        <input type="tel" id="phone" name="phone" required
+                               class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0992d6] focus:border-transparent transition-colors @error('phone') border-red-300 @enderror"
+                               value="{{ old('phone') }}" placeholder="81234567890" style="font-family: 'Noto Sans', sans-serif">
+                    </div>
+                    <p class="mt-1 text-xs text-gray-500" style="font-family: 'Noto Sans', sans-serif">Masukkan nomor WhatsApp tanpa kode negara (+62)</p>
+                    @error('phone')
+                        <p class="mt-2 text-sm text-red-600" style="font-family: 'Noto Sans', sans-serif">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <!-- Image Upload -->
                 <div>
                     <label for="image" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Inter', sans-serif">Gambar Produk *</label>

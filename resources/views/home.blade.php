@@ -10,7 +10,7 @@
         <div class="absolute inset-0">
             <img
                 id="hero-image"
-                src="{{ asset('images/herosection/bg-hero2.jpg') }}"
+                src="{{ asset('images/tentang-kami/image1.jpg') }}"
                 alt="Hero Image"
                 class="w-full h-full object-cover"
                 onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
@@ -114,7 +114,7 @@
             </div>
             <div class="w-full md:w-1/2">
                 <img
-                    src="{{ asset('images/tentang-kami/image1.jpg') }}"
+                    src="{{ asset('images/tentang-kami/bg-hero3.jpg') }}"
                     alt="Desa Wisata Wanurejo"
                     class="w-full h-auto rounded-lg shadow-md"
                     onerror="this.src='{{ asset('images/placeholder.jpg') }}'"

@@ -138,12 +138,16 @@
                     @enderror
                 </div>
 
-                <!-- Phone (Optional) -->
+                <!-- Phone (WhatsApp) -->
                 <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Nomor Telepon (Opsional)</label>
-                    <input type="tel" id="phone" name="phone"
-                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm @error('phone') border-red-300 @enderror"
-                           value="{{ old('phone', $product->phone ?? '') }}" placeholder="08xxxxxxxxxx">
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Nomor WhatsApp *</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">+62</span>
+                        <input type="tel" id="phone" name="phone" required
+                               class="mt-1 block w-full pl-12 pr-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm @error('phone') border-red-300 @enderror"
+                               value="{{ old('phone', $product->phone ?? '') }}" placeholder="81234567890">
+                    </div>
+                    <p class="mt-1 text-xs text-gray-500">Masukkan nomor WhatsApp tanpa kode negara (+62)</p>
                     @error('phone')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
