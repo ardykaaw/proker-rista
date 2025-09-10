@@ -315,7 +315,7 @@
                     </a>
 
                     <a
-                        href="{{ route('admin.login') }}"
+                        href="{{ route('login') }}"
                         class="bg-[#0992d6] hover:bg-[#0882c0] text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
                         style="font-family: 'Inter', sans-serif"
                     >
