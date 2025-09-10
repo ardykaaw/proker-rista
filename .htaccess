@@ -1,34 +1,34 @@
 <IfModule mod_rewrite.c>
-    # Ensure multi-views and indexing are disabled
+    # Pastikan multi-views dan indexing dinonaktifkan
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
-    # Turn on the rewrite engine
+    # Aktifkan rewrite engine
     RewriteEngine On
 
-    # Block access to bg_video files (e.g., .mp4 files)
+    # Blokir akses ke file bg_video (misalnya file .mp4)
     RewriteRule ^images/bg/video/.*\.mp4$ - [F,L]
 
-    # Handle Authorization Header (useful for API authentication)
+    # Menangani Header Authorization (untuk autentikasi API)
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Redirect Trailing Slashes If Not A Folder
+    # Redirect Trailing Slashes Jika Bukan Folder
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Allow direct access to images, css, js, and storage files (static assets)
+    # Izinkan akses langsung ke file gambar, css, js, dan storage (file statis)
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^(images|css|js|storage)/.*$ - [L]
 
-    # Allow direct access to storage (for files that are publicly available via the symbolic link)
+    # Izinkan akses langsung ke storage (untuk file yang dapat diakses secara publik melalui symbolic link)
     RewriteCond %{REQUEST_URI} ^/storage/
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
-    # Send all requests to the Laravel front controller (public/index.php) if not a directory or file
+    # Redirect semua permintaan lain ke front controller (public/index.php)
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ public/index.php [L]
