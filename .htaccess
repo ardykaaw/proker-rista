@@ -17,11 +17,16 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Allow direct access to images and static files
+    # Allow direct access to images, css, js, and storage files
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^(images|css|js|storage)/.*$ - [L]
-    
-    # Send Requests To Front Controller...
+
+    # Allow direct access to storage (Make sure public storage can be accessed)
+    RewriteCond %{REQUEST_URI} ^/storage/
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    # Send Requests To Front Controller if not a directory or file
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]

@@ -45,10 +45,12 @@ Route::post('/api/products', [AdminProductController::class, 'store']);
 Route::put('/api/products/{id}', [AdminProductController::class, 'update']);
 Route::delete('/api/products/{id}', [AdminProductController::class, 'destroy']);
 
-// CORS preflight
+// CORS preflight for images and API routes
 Route::options('/{any}', function () {
     return response('', 200)
         ->header('Access-Control-Allow-Origin', '*')
         ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
         ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-CSRF-TOKEN');
 })->where('any', '.*');
+
+// No need to add a route for images, they are accessed directly via /storage
