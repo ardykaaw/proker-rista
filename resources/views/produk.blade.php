@@ -343,7 +343,7 @@
             const qtyInput = document.getElementById('productQty');
             const currentQty = parseInt(qtyInput.value);
             qtyInput.value = currentQty + 1;
-        });
+    });
         
         // Close modals when clicking outside
         document.getElementById('productModal').addEventListener('click', function(e) {
