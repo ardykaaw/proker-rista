@@ -250,7 +250,7 @@
                         src="{{ asset('images/logo/logo-gabung.png') }}"
                         alt="Logo"
                         class="h-16 md:h-20 lg:h-24 mr-2"
-                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
+                        
                     />
                 </div>
 
@@ -332,7 +332,7 @@
                                 src="{{ asset('images/logo/logo-gabung.png') }}"
                                 alt="Logo"
                                 class="h-12"
-                                onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
+                                
                             />
                             <button
                                 id="close-mobile-menu"
@@ -416,7 +416,7 @@
                         src="{{ asset('images/logo/logo-umkm.png') }}"
                         alt="Logo Desa Rakadua"
                         class="h-16 sm:h-20 lg:h-24 mb-4 sm:mb-6"
-                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
+                       
                     />
                     <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                         Jelajahi Keberagaman UMKM Desa Rakadua
