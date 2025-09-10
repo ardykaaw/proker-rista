@@ -1,35 +1,17 @@
 <IfModule mod_rewrite.c>
-    # Pastikan multi-views dan indexing dinonaktifkan
+    RewriteEngine On
+
+    # Ensure multi-views and indexing are disabled
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
-    # Aktifkan rewrite engine
-    RewriteEngine On
+    # Redirect all requests to the public folder if /public is not in the URL
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
 
-    # Blokir akses ke file bg_video (misalnya file .mp4)
-    RewriteRule ^images/bg/video/.*\.mp4$ - [F,L]
-
-    # Menangani Header Authorization (untuk autentikasi API)
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-    # Redirect Trailing Slashes Jika Bukan Folder
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
-
-    # Izinkan akses langsung ke file gambar, css, js, dan storage (file statis)
-    RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^(images|css|js|storage)/.*$ - [L]
-
-    # Izinkan akses langsung ke storage (untuk file yang dapat diakses secara publik melalui symbolic link)
-    RewriteCond %{REQUEST_URI} ^/storage/
-    RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^ - [L]
-
-    # Redirect semua permintaan lain ke front controller (public/index.php)
+    # Ensure all requests are handled by the public/index.php file if they are not a directory or file
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ public/index.php [L]
+    RewriteRule ^ index.php [L]
 </IfModule>
