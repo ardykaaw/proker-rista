@@ -10,7 +10,7 @@
     <title>Desa Rakadua - Kabupaten Bombana</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -82,7 +82,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{ asset('images/logo/logo-gabung.png') }}" alt="Desa Rakadua" class="logo">
+        <img src="images/logo/logo-gabung.png" alt="Desa Rakadua" class="logo">
         <h1>Desa Rakadua</h1>
         <p>Kabupaten Bombana, Sulawesi Tenggara</p>
         <p>Jelajahi keberagaman UMKM dan produk lokal Desa Rakadua</p>

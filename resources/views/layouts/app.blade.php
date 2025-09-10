@@ -247,10 +247,10 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <img
-                        src="('images/logo/logo-gabung.png')"
+                        src="images/logo/logo-gabung.png"
                         alt="Logo"
                         class="h-16 md:h-20 lg:h-24 mr-2"
-                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
+                        
                     />
                 </div>
 
