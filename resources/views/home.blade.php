@@ -10,10 +10,10 @@
         <div class="absolute inset-0">
             <img
                 id="hero-image"
-                src="('/images/herosection/bg-hero2.jpg')"
+                src="{{ asset('images/herosection/bg-hero2.jpg') }}"
                 alt="Hero Image"
                 class="w-full h-full object-cover"
-                onerror="this.src='/images/placeholder.jpg"
+                onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
             />
             <!-- Dark overlay -->
             <div class="absolute inset-0 bg-black/30"></div>
@@ -114,10 +114,10 @@
             </div>
             <div class="w-full md:w-1/2">
                 <img
-                    src="/images/tentang-kami/image1.jpg"
+                    src="{{ asset('images/tentang-kami/image1.jpg') }}"
                     alt="Desa Wisata Wanurejo"
                     class="w-full h-auto rounded-lg shadow-md"
-                   
+                    onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                 />
             </div>
         </div>
@@ -151,10 +151,10 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="images/berita/WhatsApp Image 2025-09-05 at 12.35.33.jpeg"
+                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.35.33.jpeg') }}"
                             alt="Lomba Foto & Reels"
                             class="object-cover w-full h-full"
-                            
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                     </div>
                     <div class="p-4 sm:p-6">
@@ -181,10 +181,10 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="images/berita/WhatsApp Image 2025-09-05 at 12.44.50.jpeg"
+                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.44.50.jpeg') }}"
                             alt="Event Bulan November 2022"
                             class="object-cover w-full h-full"
-                           
+                            onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                         />
                     </div>
                     <div class="p-4 sm:p-6">

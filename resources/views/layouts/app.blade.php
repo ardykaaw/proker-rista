@@ -247,10 +247,10 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <img
-                        src="/images/logo/logo-gabung.png"
+                        src="{{ asset('images/logo/logo-gabung.png') }}"
                         alt="Logo"
                         class="h-16 md:h-20 lg:h-24 mr-2"
-                        
+                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                     />
                 </div>
 
@@ -329,10 +329,10 @@
                         <!-- Header -->
                         <div class="flex items-center justify-between p-6 border-b border-gray-200">
                             <img
-                                src="images/logo/logo-gabung.png"
+                                src="{{ asset('images/logo/logo-gabung.png') }}"
                                 alt="Logo"
                                 class="h-12"
-                              
+                                onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                             />
                             <button
                                 id="close-mobile-menu"
@@ -413,10 +413,10 @@
                 <!-- Contact & Social Media -->
                 <div class="sm:col-span-2 lg:col-span-4">
                     <img
-                        src="images/logo/logo-umkm.png"
+                        src="{{ asset('images/logo/logo-umkm.png') }}"
                         alt="Logo Desa Rakadua"
                         class="h-16 sm:h-20 lg:h-24 mb-4 sm:mb-6"
-                       
+                        onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
                     />
                     <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                         Jelajahi Keberagaman UMKM Desa Rakadua
