@@ -79,6 +79,7 @@
                             <option value="makanan" {{ old('category') == 'makanan' ? 'selected' : '' }}>Makanan</option>
                             <option value="kerajinan" {{ old('category') == 'kerajinan' ? 'selected' : '' }}>Kerajinan</option>
                             <option value="pertanian" {{ old('category') == 'pertanian' ? 'selected' : '' }}>Pertanian</option>
+                            <option value="lainnya" {{ old('category') == 'lainnya' ? 'selected' : '' }}>Lainnya</option>
                         </select>
                         @error('category')
                             <p class="mt-2 text-sm text-red-600" style="font-family: 'Noto Sans', sans-serif">{{ $message }}</p>

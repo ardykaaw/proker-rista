@@ -26,7 +26,7 @@ class AdminProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'category' => 'required|string|in:makanan,kerajinan,pertanian',
+            'category' => 'required|string|in:makanan,kerajinan,pertanian,lainnya',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
             'phone' => 'nullable|string|max:20',
         ]);
@@ -85,7 +85,7 @@ class AdminProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'category' => 'required|string|in:makanan,kerajinan,pertanian',
+            'category' => 'required|string|in:makanan,kerajinan,pertanian,lainnya',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:10240',
             'phone' => 'nullable|string|max:20',
         ]);

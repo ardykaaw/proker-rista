@@ -87,6 +87,7 @@
                         <option value="makanan" {{ old('category', $product->category ?? '') == 'makanan' ? 'selected' : '' }}>Makanan</option>
                         <option value="kerajinan" {{ old('category', $product->category ?? '') == 'kerajinan' ? 'selected' : '' }}>Kerajinan</option>
                         <option value="pertanian" {{ old('category', $product->category ?? '') == 'pertanian' ? 'selected' : '' }}>Pertanian</option>
+                        <option value="lainnya" {{ old('category', $product->category ?? '') == 'lainnya' ? 'selected' : '' }}>Lainnya</option>
                     </select>
                     @error('category')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
