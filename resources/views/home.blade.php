@@ -10,7 +10,7 @@
         <div class="absolute inset-0">
             <img
                 id="hero-image"
-                src="{{ asset('images/herosection/bg-hero2.jpg') }}"
+                src="('images/herosection/bg-hero2.jpg')"
                 alt="Hero Image"
                 class="w-full h-full object-cover"
                 onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
