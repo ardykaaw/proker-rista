@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+</head>
+<body>
+    <h1>Image Test</h1>
+    
+    <h2>Placeholder Image:</h2>
+    <img src="images/placeholder.jpg" alt="Placeholder" style="width: 200px; height: 150px;">
+    
+    <h2>Product Image:</h2>
+    <img src="storage/products/O7V65uBHBhRC4Z6vBZPfDKE8j7vhdTLT4FsVlXGA.jpg" alt="Product" style="width: 200px; height: 150px;">
+    
+    <h2>Hero Image:</h2>
+    <img src="images/herosection/bg-hero2.jpg" alt="Hero" style="width: 200px; height: 150px;">
+    
+    <h2>Direct URLs:</h2>
+    <p>Placeholder: <a href="images/placeholder.jpg" target="_blank">images/placeholder.jpg</a></p>
+    <p>Product: <a href="storage/products/O7V65uBHBhRC4Z6vBZPfDKE8j7vhdTLT4FsVlXGA.jpg" target="_blank">storage/products/O7V65uBHBhRC4Z6vBZPfDKE8j7vhdTLT4FsVlXGA.jpg</a></p>
+    <p>Hero: <a href="images/herosection/bg-hero2.jpg" target="_blank">images/herosection/bg-hero2.jpg</a></p>
+</body>
+</html>

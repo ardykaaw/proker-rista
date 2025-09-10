@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test - Desa Rakadua</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        img { border: 1px solid #ddd; margin: 10px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #eee; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Image Test - Desa Rakadua</h1>
+    
+    <div class="test-section">
+        <h2>1. Placeholder Image Test</h2>
+        <img src="images/placeholder.jpg" alt="Placeholder" style="width: 200px; height: 150px;" 
+             onload="this.nextElementSibling.innerHTML='✅ Loaded successfully'" 
+             onerror="this.nextElementSibling.innerHTML='❌ Failed to load'">
+        <p id="placeholder-status">Loading...</p>
+        <p><a href="images/placeholder.jpg" target="_blank">Direct link: images/placeholder.jpg</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Product Image Test</h2>
+        <img src="storage/products/2T0vfM60Ck4NCrWW5reRcftpFXun3xyyHDKPYYEq.webp" alt="Product" style="width: 200px; height: 150px;"
+             onload="this.nextElementSibling.innerHTML='✅ Loaded successfully'" 
+             onerror="this.nextElementSibling.innerHTML='❌ Failed to load'">
+        <p id="product-status">Loading...</p>
+        <p><a href="storage/products/2T0vfM60Ck4NCrWW5reRcftpFXun3xyyHDKPYYEq.webp" target="_blank">Direct link: storage/products/2T0vfM60Ck4NCrWW5reRcftpFXun3xyyHDKPYYEq.webp</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Hero Image Test</h2>
+        <img src="images/herosection/bg-hero.jpg" alt="Hero" style="width: 200px; height: 150px;"
+             onload="this.nextElementSibling.innerHTML='✅ Loaded successfully'" 
+             onerror="this.nextElementSibling.innerHTML='❌ Failed to load'">
+        <p id="hero-status">Loading...</p>
+        <p><a href="images/herosection/bg-hero.jpg" target="_blank">Direct link: images/herosection/bg-hero.jpg</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Berita Image Test</h2>
+        <img src="images/berita/berita1.png" alt="Berita" style="width: 200px; height: 150px;"
+             onload="this.nextElementSibling.innerHTML='✅ Loaded successfully'" 
+             onerror="this.nextElementSibling.innerHTML='❌ Failed to load'">
+        <p id="berita-status">Loading...</p>
+        <p><a href="images/berita/berita1.png" target="_blank">Direct link: images/berita/berita1.png</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>5. Galeri Image Test</h2>
+        <img src="images/galery/galeri1.jpg" alt="Galeri" style="width: 200px; height: 150px;"
+             onload="this.nextElementSibling.innerHTML='✅ Loaded successfully'" 
+             onerror="this.nextElementSibling.innerHTML='❌ Failed to load'">
+        <p id="galeri-status">Loading...</p>
+        <p><a href="images/galery/galeri1.jpg" target="_blank">Direct link: images/galery/galeri1.jpg</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>6. Logo Image Test</h2>
+        <img src="images/logo/logo.png" alt="Logo" style="width: 200px; height: 80px;"
+             onload="this.nextElementSibling.innerHTML='✅ Loaded successfully'" 
+             onerror="this.nextElementSibling.innerHTML='❌ Failed to load'">
+        <p id="logo-status">Loading...</p>
+        <p><a href="images/logo/logo.png" target="_blank">Direct link: images/logo/logo.png</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>📋 Test Results Summary</h2>
+        <p id="summary">Running tests...</p>
+    </div>
+    
+    <script>
+        // Test all images and show summary
+        setTimeout(function() {
+            const images = document.querySelectorAll('img');
+            let successCount = 0;
+            let totalCount = images.length;
+            
+            images.forEach(img => {
+                if (img.complete && img.naturalHeight !== 0) {
+                    successCount++;
+                }
+            });
+            
+            const summary = document.getElementById('summary');
+            if (successCount === totalCount) {
+                summary.innerHTML = `🎉 All ${totalCount} images loaded successfully!`;
+                summary.className = 'success';
+            } else {
+                summary.innerHTML = `⚠️ ${successCount}/${totalCount} images loaded successfully`;
+                summary.className = 'error';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
