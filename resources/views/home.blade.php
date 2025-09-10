@@ -151,7 +151,7 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.35.33.jpeg') }}"
+                            src="{{ asset('images/berita/image copy.png') }}"
                             alt="Lomba Foto & Reels"
                             class="object-cover w-full h-full"
                             onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
@@ -181,7 +181,7 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.44.50.jpeg') }}"
+                            src="{{ asset('images/berita/image.png') }}"
                             alt="Event Bulan November 2022"
                             class="object-cover w-full h-full"
                             onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
@@ -211,7 +211,7 @@
                         class="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center"
                     >
                         <img
-                            src="{{ asset('images/berita/foto-log-book-1756512049.jpeg') }}"
+                            src="{{ asset('images/berita/WhatsApp Image 2025-09-05 at 12.32.35.jpeg') }}"
                             alt="Pagelaran Seni"
                             class="object-cover w-full h-full"
                             onerror="this.src='{{ asset('images/placeholder.jpg') }}'"
