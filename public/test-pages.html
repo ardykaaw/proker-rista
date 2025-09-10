@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Test - Desa Rakadua</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #eee; }
+        .success { color: green; }
+        .error { color: red; }
+        iframe { width: 100%; height: 300px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Page Test - Desa Rakadua</h1>
+    
+    <div class="test-section">
+        <h2>1. Sejarah Page Test</h2>
+        <iframe src="/sejarah" title="Sejarah Page"></iframe>
+        <p><a href="/sejarah" target="_blank">Open in new tab: /sejarah</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Produk Page Test</h2>
+        <iframe src="/produk" title="Produk Page"></iframe>
+        <p><a href="/produk" target="_blank">Open in new tab: /produk</a></p>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. API Test</h2>
+        <button onclick="testAPI()">Test API Products</button>
+        <div id="apiResult"></div>
+    </div>
+    
+    <script>
+        async function testAPI() {
+            const resultDiv = document.getElementById('apiResult');
+            resultDiv.innerHTML = 'Testing API...';
+            
+            try {
+                const response = await fetch('/api/products');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `<div class="success">✅ API Success: ${data.length} products found</div>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ API Error: ${response.status} ${response.statusText}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ API Error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>
